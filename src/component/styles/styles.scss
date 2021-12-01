@@ -71,7 +71,8 @@ body {
                     cursor: pointer;
                 }
                 .active {
-                    border: 2px solid #000;
+                    border: 2px solid solidColor(white);
+                    transition: 0.3s ease;
                 }
             }
         }

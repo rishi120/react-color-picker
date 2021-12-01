@@ -8,7 +8,7 @@ const Data4 = createContext();
 
 const Mastercomponent = () => {
   const [copy, setCopy] = useState(null);
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState("");
   const handleColors = (colorHexCode) => {
     const copyCode = colorHexCode;
     const text = document.createElement("textarea");
@@ -59,6 +59,7 @@ const Mastercomponent = () => {
     handleMixColor,
   };
   const handleColorPalette = (i) => {
+    setActive(i);
     const section1 = document.getElementById("red-color-pallete-wrapper");
     const section2 = document.getElementById("blue-color-pallete-wrapper");
     const section3 = document.getElementById("green-color-pallete-wrapper");
