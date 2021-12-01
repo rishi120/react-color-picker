@@ -8,7 +8,7 @@ import { Data } from "./master";
 const Bluepalette = () => {
   const { copy, handleBlueColor } = useContext(Data);
   return (
-    <div className="red-color-pallete-wrapper">
+    <div className="red-color-pallete-wrapper" id="blue-color-pallete-wrapper">
       <h2>Blue Palette</h2>
       <Row>
         {blueColor.map((getBgColor, i) => {

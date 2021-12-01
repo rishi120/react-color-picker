@@ -195,3 +195,72 @@ export const yellowColor = [{
         colorName: "Hot Toddy"
     }
 ]
+
+export const mixColors = [{
+        mixColorsHexCode: "#8D3DAF",
+        colorName: "Royal Purple"
+    }, {
+        mixColorsHexCode: "#E07C24",
+        colorName: "Zest"
+    }, {
+        mixColorsHexCode: "#758283",
+        colorName: "Sirocco"
+    },
+    {
+        mixColorsHexCode: "#E03B8B",
+        colorName: "Cerise"
+    },
+    {
+        mixColorsHexCode: "#FF6666",
+        colorName: "Bittersweet"
+    },
+    {
+        mixColorsHexCode: "#242B2E",
+        colorName: "Outer Space"
+    },
+    {
+        mixColorsHexCode: "#03C6C7",
+        colorName: "Robin's Egg Blue"
+    },
+    {
+        mixColorsHexCode: "#5A20CB",
+        colorName: "Purple Heart"
+    },
+    {
+        mixColorsHexCode: "#6A1B4D",
+        colorName: "Tawny Port"
+    },
+    {
+        mixColorsHexCode: "#CAD5E2",
+        colorName: "Botticelli"
+    },
+    {
+        mixColorsHexCode: "#35BDD0",
+        colorName: "Scooter"
+    },
+    {
+        mixColorsHexCode: "#0D0D0D",
+        colorName: "Code Gray"
+    }
+]
+export const colors = [{
+        colorId: 0,
+        code: "#BF3325",
+    },
+    {
+        colorId: 1,
+        code: "#383CC1",
+    },
+    {
+        colorId: 2,
+        code: "#1FAA59",
+    },
+    {
+        colorId: 3,
+        code: "#E8BD0D",
+    },
+    {
+        colorId: 4,
+        code: "#6A1B4D",
+    },
+];
