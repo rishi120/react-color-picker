@@ -1,99 +1,127 @@
 /*  google fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
-$roboto: 'Roboto', sans-serif;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+$roboto: "Roboto",
+sans-serif;
+
 /* implementing sass map get to store all the colors */
-$colors: (background-bg: #292929, white: #fff);
-@function solidColor($color){
-  @return map-get($colors, $color);
+
+$colors: ( background-bg: #292929,
+white: #fff,
+scrollBar: #b4161b,
+);
+@function solidColor($color) {
+    @return map-get($colors,
+    $color);
 }
 
-  html,body{
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    section{
-      background-color: solidColor(background-bg);
-      h1{
-        margin: 0;
-        font: 28px $roboto;
-        color: solidColor(white);
-        padding: 0.5em 0 1em 0;
-      }
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 12px;
     }
-    section{
-      .red-color-pallete-wrapper{
-        padding: 1em 0;
-        border-bottom: 1px solid hsla(0,0%,100%,.16);
-        h1{
-          text-align: center;
-          font: 35px $roboto;
-          padding: 0;
-          letter-spacing: 2px;
-          text-align: center;
+    &::-webkit-scrollbar-thumb {
+        background-color: solidColor(scrollBar);
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #383838;
+    }
+    &::-moz-scrollbar {
+        width: 8px;
+        height: 12px;
+    }
+    &::-moz-scrollbar-thumb {
+        background-color: solidColor(scrollBar);
+    }
+    &::-moz-scrollbar-track {
+        background-color: #383838;
+    }
+    section {
+        background-color: solidColor(background-bg);
+        h1 {
+            margin: 0;
+            font: 28px $roboto;
+            color: solidColor(white);
+            padding: 0.5em 0 1em 0;
         }
-        p{
-          font: 18px $roboto;
-          font-weight: 300;
-          letter-spacing: 1px;
-          color: solidColor(white);
-          text-align: center;
-          padding-top: 0;
-
-        }
-        h2{
-          font: 25px $roboto;
-          color: solidColor(white);
-          padding: 1.5em 0 1em 0;
-          text-indent: 0.5em;
-        }
-        .redColor-wrapper{
-          height: 20em;
-          margin-bottom: 2em;
-          position: relative;
-          box-shadow: rgba(0,0,0,0.16) 0 10px 36px 0, rgba(0,0,0,0.06) 0 0 0 1px;
-          transition: 0.3s ease;
-          cursor: pointer;
-          background-color: solidColor(white);
-          border-radius: .5rem;
-          &:hover{
-            transform: scale(1.05);
-          }
-          h5{
-            position: absolute;
-            top: 0.5em;
-            right: 1em;
-            background-color: #000;
-            color: #fff;
-            padding: 0.3em;
-            border-radius: 5px;
-          }
-          .color-wrapper{
-            height: 80%;
-            border-top-left-radius: .5rem;
-            border-top-right-radius: .5rem;
-          }
-          h1{
-            font: 16px $roboto;
-            margin: 0.8em 0;
-            color: solidColor(background-bg);
-            text-align: left;
-            padding-left: 0.7em;
-          }
-          p{
-            position: absolute;
-            bottom: 8px;
-            color: #000;
-            font-size: 13px;
-            left: 1em;
-            margin-bottom: 0;
-            width: 35%;
-            display: flex;
-            justify-content: space-between;
-            span{
-              font-weight: 500;
+    }
+    section {
+        .red-color-pallete-wrapper {
+            padding: 1em 0;
+            border-bottom: 1px solid hsla(0, 0%, 100%, 0.16);
+            h1 {
+                text-align: center;
+                font: 35px $roboto;
+                padding: 0;
+                letter-spacing: 2px;
+                text-align: center;
             }
-          }
+            p {
+                font: 18px $roboto;
+                font-weight: 300;
+                letter-spacing: 1px;
+                color: solidColor(white);
+                text-align: center;
+                padding-top: 0;
+            }
+            h2 {
+                font: 25px $roboto;
+                color: solidColor(white);
+                padding: 1.5em 0 1em 0;
+                text-indent: 0.5em;
+            }
+            .redColor-wrapper {
+                height: 20em;
+                margin-bottom: 2em;
+                position: relative;
+                box-shadow: rgba(0, 0, 0, 0.16) 0 10px 36px 0, rgba(0, 0, 0, 0.06) 0 0 0 1px;
+                transition: 0.3s ease;
+                cursor: pointer;
+                background-color: solidColor(white);
+                border-radius: 0.5rem;
+                &:hover {
+                    transform: scale(1.05);
+                }
+                h5 {
+                    position: absolute;
+                    top: 0.5em;
+                    right: 1em;
+                    background-color: #000;
+                    color: #fff;
+                    padding: 0.3em;
+                    border-radius: 5px;
+                }
+                .color-wrapper {
+                    height: 80%;
+                    border-top-left-radius: 0.5rem;
+                    border-top-right-radius: 0.5rem;
+                }
+                h1 {
+                    font: 16px $roboto;
+                    margin: 0.8em 0;
+                    color: solidColor(background-bg);
+                    text-align: left;
+                    padding-left: 0.7em;
+                }
+                p {
+                    position: absolute;
+                    bottom: 8px;
+                    color: #000;
+                    font-size: 13px;
+                    left: 1em;
+                    margin-bottom: 0;
+                    width: 35%;
+                    display: flex;
+                    justify-content: space-between;
+                    span {
+                        font-weight: 500;
+                    }
+                }
+            }
         }
-      }
     }
-  }
+}

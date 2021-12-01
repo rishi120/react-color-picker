@@ -3,6 +3,7 @@ import Maincomponent from "./main";
 
 const Data = createContext();
 const Data2 = createContext();
+const Data3 = createContext();
 
 const Mastercomponent = () => {
   const [copy, setCopy] = useState(null);
@@ -29,6 +30,9 @@ const Mastercomponent = () => {
   const handleGreenColor = (colorHexCode) => {
     handleColors(colorHexCode);
   };
+  const handleYellowColor = (colorHexCode) => {
+    handleColors(colorHexCode);
+  };
   const values = {
     copy,
     setCopy,
@@ -39,10 +43,17 @@ const Mastercomponent = () => {
     setCopy,
     handleGreenColor,
   };
+  const yellowColorValues = {
+    copy,
+    setCopy,
+    handleYellowColor,
+  };
   return (
     <Data.Provider value={values}>
       <Data2.Provider value={greenColorValues}>
-        <Maincomponent handleColors={handleColors} copy={copy} />
+        <Data3.Provider value={yellowColorValues}>
+          <Maincomponent handleColors={handleColors} copy={copy} />
+        </Data3.Provider>
       </Data2.Provider>
     </Data.Provider>
   );
@@ -50,3 +61,4 @@ const Mastercomponent = () => {
 export default Mastercomponent;
 export { Data };
 export { Data2 };
+export { Data3 };

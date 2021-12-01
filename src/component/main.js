@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Bluepalette from "./blue-palette";
 import Greenpalette from "./green-palette";
+import Yellowpalette from "./yellow-palette";
 
 const Maincomponent = (props) => {
   return (
@@ -43,6 +44,7 @@ const Maincomponent = (props) => {
         </div>
         <Bluepalette />
         <Greenpalette />
+        <Yellowpalette />
       </Container>
     </section>
   );

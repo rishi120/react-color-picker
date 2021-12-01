@@ -147,3 +147,51 @@ export const greenColor = [{
         colorName: "Malachite"
     }
 ];
+
+export const yellowColor = [{
+        yellowColorHexCode: "#E8BD0D",
+        colorName: "Galliona"
+    }, {
+        yellowColorHexCode: "#EDBF69",
+        colorName: "Porsche"
+    }, {
+        yellowColorHexCode: "#F4BE2C",
+        colorName: "Saffron"
+    },
+    {
+        yellowColorHexCode: "#EDC126",
+        colorName: "Golden Dream"
+    },
+    {
+        yellowColorHexCode: "#E5D68A",
+        colorName: "Putty"
+    },
+    {
+        yellowColorHexCode: "#DDD101",
+        colorName: "Corn"
+    },
+    {
+        yellowColorHexCode: "#D9D55B",
+        colorName: "Tacha"
+    },
+    {
+        yellowColorHexCode: "#F7CD2E",
+        colorName: "Saffron"
+    },
+    {
+        yellowColorHexCode: "#AF9D5A",
+        colorName: "Teak"
+    },
+    {
+        yellowColorHexCode: "#C7C11A",
+        colorName: "Key Lime Pie"
+    },
+    {
+        yellowColorHexCode: "#F4CE6A",
+        colorName: "Cream Can"
+    },
+    {
+        yellowColorHexCode: "#A77B06",
+        colorName: "Hot Toddy"
+    }
+]
