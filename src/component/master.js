@@ -61,8 +61,8 @@ const Mastercomponent = () => {
   const handleColorPalette = (i) => {
     setActive(i);
     const section1 = document.getElementById("red-color-pallete-wrapper");
-    const section2 = document.getElementById("blue-color-pallete-wrapper");
     const section3 = document.getElementById("green-color-pallete-wrapper");
+    const section2 = document.getElementById("blue-color-pallete-wrapper");
     const section4 = document.getElementById("yellow-color-pallete-wrapper");
     const section5 = document.getElementById("mix-color-pallete-wrapper");
     if (i === 0) {
@@ -71,12 +71,12 @@ const Mastercomponent = () => {
       });
     }
     if (i === 1) {
-      section2.scrollIntoView({
+      section3.scrollIntoView({
         behavior: "smooth",
       });
     }
     if (i === 2) {
-      section3.scrollIntoView({
+      section2.scrollIntoView({
         behavior: "smooth",
       });
     }

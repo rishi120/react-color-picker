@@ -69,6 +69,12 @@ body {
                     height: 25px;
                     border-radius: 50%;
                     cursor: pointer;
+                    text-align: center;
+                    font: 12px $roboto;
+                    color: solidColor(white);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
                 .active {
                     border: 2px solid solidColor(white);
@@ -100,7 +106,7 @@ body {
             h2 {
                 font: 25px $roboto;
                 color: solidColor(white);
-                padding: 1.5em 0 1em 0;
+                padding: 0 0 1em 0;
                 text-indent: 0.5em;
             }
             .redColor-wrapper {

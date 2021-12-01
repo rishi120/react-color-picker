@@ -23,7 +23,9 @@ const Maincomponent = (props) => {
                   style={{ backgroundColor: colorCode.code }}
                   onClick={() => props.handleColorPalette(index)}
                   className={props.active === index ? "active" : ""}
-                ></li>
+                >
+                  {colorCode.text}
+                </li>
               );
             })}
           </ul>

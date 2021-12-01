@@ -246,21 +246,27 @@ export const mixColors = [{
 export const colors = [{
         colorId: 0,
         code: "#BF3325",
+        text: "R"
     },
     {
         colorId: 1,
-        code: "#383CC1",
+        code: "#1FAA59",
+        text: "G"
     },
     {
         colorId: 2,
-        code: "#1FAA59",
+        code: "#383CC1",
+        text: "B"
     },
+
     {
         colorId: 3,
         code: "#E8BD0D",
+        text: "Y"
     },
     {
         colorId: 4,
         code: "#6A1B4D",
+        text: "M"
     },
 ];
