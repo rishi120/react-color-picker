@@ -1,8 +1,7 @@
-import React, { useState, createContext, useEffect } from "react";
+import React, { useState, createContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Maincomponent from "./main";
 import Gradientcolorcomponent from "./gradient";
-import ScrollToTop from "../scrollToTop";
 
 const Data = createContext();
 const Data2 = createContext();
@@ -98,9 +97,11 @@ const Mastercomponent = () => {
       });
     }
   };
+  const handleScrollTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <Router>
-      <ScrollToTop />
       <Switch>
         <Data.Provider value={values}>
           <Data2.Provider value={greenColorValues}>
@@ -112,6 +113,7 @@ const Mastercomponent = () => {
                     copy={copy}
                     handleColorPalette={handleColorPalette}
                     active={active}
+                    handleScrollTop={handleScrollTop}
                   />
                 </Route>
                 <Route exact path="/gradient">

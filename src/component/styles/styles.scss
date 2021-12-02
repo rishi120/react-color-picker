@@ -15,6 +15,11 @@ scrollBar: #b4161b,
     $color);
 }
 
+
+/* add css media query variable */
+
+$mq9b: "screen and (min-width: 767px) and (max-width: 991px)";
+$mq7b: "screen and (max-width: 767px)";
 html,
 body {
     margin: 0;
@@ -53,6 +58,7 @@ body {
             padding: 1em;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             h1 {
                 margin: 0;
                 font: 20px $roboto;
@@ -65,6 +71,12 @@ body {
                 list-style-type: none;
                 width: 15%;
                 padding: 0 15px 0 0;
+                @media #{$mq9b} {
+                    width: 30%;
+                }
+                @media #{$mq7b} {
+                    width: 60%;
+                }
                 li {
                     width: 25px;
                     height: 25px;
@@ -125,6 +137,12 @@ body {
                 cursor: pointer;
                 background-color: solidColor(white);
                 border-radius: 0.5rem;
+                @media #{$mq9b} {
+                    height: 12em;
+                }
+                @media #{$mq7b} {
+                    height: 20em;
+                }
                 &:hover {
                     transform: scale(1.05);
                 }
@@ -148,6 +166,10 @@ body {
                     color: solidColor(background-bg);
                     text-align: left;
                     padding-left: 0.7em;
+                    @media #{$mq9b} {
+                        margin-top: 5px;
+                        font-size: 13px;
+                    }
                 }
                 p {
                     position: absolute;
@@ -158,6 +180,10 @@ body {
                     margin-bottom: 0;
                     width: 60%;
                     display: flex;
+                    @media #{$mq9b} {
+                        bottom: 3px;
+                        font-size: 12px;
+                    }
                     span {
                         font-weight: 500;
                         padding-left: 10px;

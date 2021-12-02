@@ -32,7 +32,7 @@ const Maincomponent = (props) => {
                 );
               })}
             </ul>
-            <Button>
+            <Button onClick={props.handleScrollTop}>
               <Link to="/gradient">Gradient</Link>
             </Button>
           </div>
