@@ -1,5 +1,8 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Maincomponent from "./main";
+import Gradientcolorcomponent from "./gradient";
+import ScrollToTop from "../scrollToTop";
 
 const Data = createContext();
 const Data2 = createContext();
@@ -9,6 +12,7 @@ const Data4 = createContext();
 const Mastercomponent = () => {
   const [copy, setCopy] = useState(null);
   const [active, setActive] = useState("");
+
   const handleColors = (colorHexCode) => {
     const copyCode = colorHexCode;
     const text = document.createElement("textarea");
@@ -36,6 +40,9 @@ const Mastercomponent = () => {
     handleColors(colorHexCode);
   };
   const handleMixColor = (colorHexCode) => {
+    handleColors(colorHexCode);
+  };
+  const handleGradientColors = (colorHexCode) => {
     handleColors(colorHexCode);
   };
   const values = {
@@ -92,20 +99,33 @@ const Mastercomponent = () => {
     }
   };
   return (
-    <Data.Provider value={values}>
-      <Data2.Provider value={greenColorValues}>
-        <Data3.Provider value={yellowColorValues}>
-          <Data4.Provider value={mixColorValues}>
-            <Maincomponent
-              handleColors={handleColors}
-              copy={copy}
-              handleColorPalette={handleColorPalette}
-              active={active}
-            />
-          </Data4.Provider>
-        </Data3.Provider>
-      </Data2.Provider>
-    </Data.Provider>
+    <Router>
+      <ScrollToTop />
+      <Switch>
+        <Data.Provider value={values}>
+          <Data2.Provider value={greenColorValues}>
+            <Data3.Provider value={yellowColorValues}>
+              <Data4.Provider value={mixColorValues}>
+                <Route exact path="/">
+                  <Maincomponent
+                    handleColors={handleColors}
+                    copy={copy}
+                    handleColorPalette={handleColorPalette}
+                    active={active}
+                  />
+                </Route>
+                <Route exact path="/gradient">
+                  <Gradientcolorcomponent
+                    copy={copy}
+                    handleGradientColors={handleGradientColors}
+                  />
+                </Route>
+              </Data4.Provider>
+            </Data3.Provider>
+          </Data2.Provider>
+        </Data.Provider>
+      </Switch>
+    </Router>
   );
 };
 export default Mastercomponent;

@@ -270,3 +270,35 @@ export const colors = [{
         text: "M"
     },
 ];
+
+export const gradientColors = [{
+        gradientColorCodes: "#FF9F4A, #FF3C83",
+    },
+    {
+        gradientColorCodes: "#FED54A, #FF9347",
+    },
+    {
+        gradientColorCodes: "#EFF54D, #00AC61",
+    },
+    {
+        gradientColorCodes: "#538FFB, #5B54FA",
+    },
+    {
+        gradientColorCodes: "#FD297A, #9424F0",
+    },
+    {
+        gradientColorCodes: "#253898, #5737D6",
+    },
+    {
+        gradientColorCodes: "#FF4331, #D31A50",
+    },
+    {
+        gradientColorCodes: "#DB0B5F, #6F00ED",
+    },
+    {
+        gradientColorCodes: "#E1A2B8, #9F2BC1",
+    },
+    {
+        gradientColorCodes: "#00BC40, #4C3AE3",
+    }
+]

@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/styles.scss";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 import { redColors, colors } from "../component/data/data";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -8,6 +9,7 @@ import Bluepalette from "./blue-palette";
 import Greenpalette from "./green-palette";
 import Yellowpalette from "./yellow-palette";
 import Mixcolorpalette from "./mix-colors";
+import { Link } from "react-router-dom";
 
 const Maincomponent = (props) => {
   return (
@@ -15,20 +17,25 @@ const Maincomponent = (props) => {
       <Container fluid>
         <div className="pos-fixed">
           <h1>UIColorPicker</h1>
-          <ul>
-            {colors.map((colorCode, index) => {
-              return (
-                <li
-                  key={index}
-                  style={{ backgroundColor: colorCode.code }}
-                  onClick={() => props.handleColorPalette(index)}
-                  className={props.active === index ? "active" : ""}
-                >
-                  {colorCode.text}
-                </li>
-              );
-            })}
-          </ul>
+          <div className="w-100 d-flex justify-content-end align-items-center">
+            <ul>
+              {colors.map((colorCode, index) => {
+                return (
+                  <li
+                    key={index}
+                    style={{ backgroundColor: colorCode.code }}
+                    onClick={() => props.handleColorPalette(index)}
+                    className={props.active === index ? "active" : ""}
+                  >
+                    {colorCode.text}
+                  </li>
+                );
+              })}
+            </ul>
+            <Button>
+              <Link to="/gradient">Gradient</Link>
+            </Button>
+          </div>
         </div>
         <div
           className="red-color-pallete-wrapper"
