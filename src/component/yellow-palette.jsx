@@ -27,7 +27,7 @@ const Yellowpalette = () => {
                     backgroundColor: getBgColor.yellowColorHexCode,
                   }}
                 ></div>
-                {copy === getBgColor.greenColorHexCode ? <h5>Copied!</h5> : ""}
+                {copy === getBgColor.yellowColorHexCode ? <h5>Copied!</h5> : ""}
                 <h1>{getBgColor.colorName}</h1>
                 <p>
                   HEX <span>{getBgColor.yellowColorHexCode}</span>

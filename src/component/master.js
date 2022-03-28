@@ -7,6 +7,7 @@ const Data = createContext();
 const Data2 = createContext();
 const Data3 = createContext();
 const Data4 = createContext();
+const Data5 = createContext();
 
 const Mastercomponent = () => {
   const [copy, setCopy] = useState(null);
@@ -29,6 +30,9 @@ const Mastercomponent = () => {
       }, 3000);
     }
   };
+  const handlePremiumColor = (colorHexCode) => {
+    handleColors(colorHexCode);
+  }
   const handleBlueColor = (colorHexCode) => {
     handleColors(colorHexCode);
   };
@@ -44,6 +48,12 @@ const Mastercomponent = () => {
   const handleGradientColors = (colorHexCode) => {
     handleColors(colorHexCode);
   };
+  const premiumColorValues = {
+    copy,
+    setCopy,
+    handlePremiumColor,
+
+  }
   const values = {
     copy,
     setCopy,
@@ -71,27 +81,33 @@ const Mastercomponent = () => {
     const section2 = document.getElementById("blue-color-pallete-wrapper");
     const section4 = document.getElementById("yellow-color-pallete-wrapper");
     const section5 = document.getElementById("mix-color-pallete-wrapper");
+    const section6 = document.getElementById("premium-color-pallete-wrapper");
     if (i === 0) {
-      section1.scrollIntoView({
+      section6.scrollIntoView({
         behavior: "smooth",
       });
     }
     if (i === 1) {
-      section3.scrollIntoView({
+      section1.scrollIntoView({
         behavior: "smooth",
       });
     }
     if (i === 2) {
-      section2.scrollIntoView({
+      section3.scrollIntoView({
         behavior: "smooth",
       });
     }
     if (i === 3) {
-      section4.scrollIntoView({
+      section2.scrollIntoView({
         behavior: "smooth",
       });
     }
     if (i === 4) {
+      section4.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+    if (i === 5) {
       section5.scrollIntoView({
         behavior: "smooth",
       });
@@ -99,6 +115,7 @@ const Mastercomponent = () => {
   };
   const handleScrollTop = () => {
     window.scrollTo(0, 0);
+    setActive("");
   };
   return (
     <Router>
@@ -107,21 +124,23 @@ const Mastercomponent = () => {
           <Data2.Provider value={greenColorValues}>
             <Data3.Provider value={yellowColorValues}>
               <Data4.Provider value={mixColorValues}>
-                <Route exact path="/">
-                  <Maincomponent
-                    handleColors={handleColors}
-                    copy={copy}
-                    handleColorPalette={handleColorPalette}
-                    active={active}
-                    handleScrollTop={handleScrollTop}
-                  />
-                </Route>
-                <Route exact path="/gradient">
-                  <Gradientcolorcomponent
-                    copy={copy}
-                    handleGradientColors={handleGradientColors}
-                  />
-                </Route>
+                <Data5.Provider value={premiumColorValues}>
+                  <Route exact path="/">
+                    <Maincomponent
+                      handleColors={handleColors}
+                      copy={copy}
+                      handleColorPalette={handleColorPalette}
+                      active={active}
+                      handleScrollTop={handleScrollTop}
+                    />
+                  </Route>
+                  <Route exact path="/gradient">
+                    <Gradientcolorcomponent
+                      copy={copy}
+                      handleGradientColors={handleGradientColors}
+                    />
+                  </Route>
+                </Data5.Provider>
               </Data4.Provider>
             </Data3.Provider>
           </Data2.Provider>
@@ -135,3 +154,4 @@ export { Data };
 export { Data2 };
 export { Data3 };
 export { Data4 };
+export { Data5 };

@@ -2,14 +2,14 @@ import React from "react";
 import "./styles/styles.scss";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-import { redColors, colors } from "../component/data/data";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Redpalette from "./red-palette";
+import Premiumpalette from "./premium-palette";
 import Bluepalette from "./blue-palette";
 import Greenpalette from "./green-palette";
 import Yellowpalette from "./yellow-palette";
 import Mixcolorpalette from "./mix-colors";
 import { Link } from "react-router-dom";
+import { colors } from "../component/data/data";
 
 const Maincomponent = (props) => {
   return (
@@ -37,38 +37,12 @@ const Maincomponent = (props) => {
             </Button>
           </div>
         </div>
-        <div
-          className="red-color-pallete-wrapper"
-          id="red-color-pallete-wrapper"
-        >
+        <div className="red-color-pallete-wrapper">
           <h1>Click to Copy</h1>
           <p>Always perfect color</p>
-          <h2>Red Palette</h2>
-          <Row>
-            {redColors.map((getBgColor, i) => {
-              return (
-                <Col md="3" key={i}>
-                  <div
-                    className="redColor-wrapper"
-                    onClick={() => props.handleColors(getBgColor.hexCode)}
-                  >
-                    <div
-                      className="color-wrapper"
-                      style={{
-                        backgroundColor: getBgColor.hexCode,
-                      }}
-                    ></div>
-                    {props.copy === getBgColor.hexCode ? <h5>Copied!</h5> : ""}
-                    <h1>{getBgColor.colorName}</h1>
-                    <p>
-                      HEX <span>{getBgColor.hexCode}</span>
-                    </p>
-                  </div>
-                </Col>
-              );
-            })}
-          </Row>
+          <Premiumpalette />
         </div>
+        <Redpalette handleColors={props.handleColors} copy={props.copy} />
         <Bluepalette />
         <Greenpalette />
         <Yellowpalette />

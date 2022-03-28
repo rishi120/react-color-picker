@@ -6,13 +6,14 @@ sans-serif;
 
 /* implementing sass map get to store all the colors */
 
-$colors: ( background-bg: #292929,
-white: #fff,
-scrollBar: #b4161b,
+$colors: (background-bg: #292929,
+    white: #fff,
+    scrollBar: #b4161b,
 );
+
 @function solidColor($color) {
     @return map-get($colors,
-    $color);
+        $color);
 }
 
 
@@ -20,50 +21,61 @@ scrollBar: #b4161b,
 
 $mq9b: "screen and (min-width: 767px) and (max-width: 991px)";
 $mq7b: "screen and (max-width: 767px)";
+
 html,
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
+
     &::-webkit-scrollbar {
         width: 8px;
         height: 12px;
     }
+
     &::-webkit-scrollbar-thumb {
         background-color: solidColor(scrollBar);
     }
+
     &::-webkit-scrollbar-track {
         background-color: #383838;
     }
+
     &::-moz-scrollbar {
         width: 8px;
         height: 12px;
     }
+
     &::-moz-scrollbar-thumb {
         background-color: solidColor(scrollBar);
     }
+
     &::-moz-scrollbar-track {
         background-color: #383838;
     }
+
     section {
         background-color: solidColor(background-bg);
+
         .pos-fixed {
             position: fixed;
             width: 100%;
             left: 0;
             z-index: 1;
-            background-color: rgb(39 36 34 / 0.72);
+            background-color: solidColor(background-bg);
             box-shadow: outset 0px -1px 1px #eaeef3;
             backdrop-filter: blur(20px);
             padding: 1em;
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             h1 {
                 margin: 0;
                 font: 20px $roboto;
                 color: solidColor(white);
             }
+
             ul {
                 display: flex;
                 justify-content: space-between;
@@ -71,12 +83,15 @@ body {
                 list-style-type: none;
                 width: 15%;
                 padding: 0 15px 0 0;
+
                 @media #{$mq9b} {
                     width: 30%;
                 }
+
                 @media #{$mq7b} {
                     width: 60%;
                 }
+
                 li {
                     width: 25px;
                     height: 25px;
@@ -89,11 +104,13 @@ body {
                     align-items: center;
                     justify-content: center;
                 }
+
                 .active {
                     border: 2px solid solidColor(white);
                     transition: 0.2s ease;
                 }
             }
+
             button {
                 a {
                     color: solidColor(white);
@@ -102,10 +119,12 @@ body {
             }
         }
     }
+
     section {
         .red-color-pallete-wrapper {
             padding: 5em 0 0 0;
             border-bottom: 1px solid hsla(0, 0%, 100%, 0.16);
+
             h1 {
                 text-align: center;
                 font: 35px $roboto;
@@ -114,6 +133,7 @@ body {
                 text-align: center;
                 color: solidColor(white);
             }
+
             p {
                 font: 18px $roboto;
                 font-weight: 300;
@@ -122,12 +142,14 @@ body {
                 text-align: center;
                 padding-top: 0;
             }
+
             h2 {
                 font: 25px $roboto;
                 color: solidColor(white);
                 padding: 0 0 1em 0;
                 text-indent: 0.5em;
             }
+
             .redColor-wrapper {
                 height: 20em;
                 margin-bottom: 2em;
@@ -137,15 +159,19 @@ body {
                 cursor: pointer;
                 background-color: solidColor(white);
                 border-radius: 0.5rem;
+
                 @media #{$mq9b} {
                     height: 12em;
                 }
+
                 @media #{$mq7b} {
                     height: 20em;
                 }
+
                 &:hover {
                     transform: scale(1.05);
                 }
+
                 h5 {
                     position: absolute;
                     top: 0.5em;
@@ -155,22 +181,26 @@ body {
                     padding: 0.3em;
                     border-radius: 5px;
                 }
+
                 .color-wrapper {
                     height: 80%;
                     border-top-left-radius: 0.5rem;
                     border-top-right-radius: 0.5rem;
                 }
+
                 h1 {
                     font: 16px $roboto;
                     margin: 0.8em 0;
                     color: solidColor(background-bg);
                     text-align: left;
                     padding-left: 0.7em;
+
                     @media #{$mq9b} {
                         margin-top: 5px;
                         font-size: 13px;
                     }
                 }
+
                 p {
                     position: absolute;
                     bottom: 8px;
@@ -180,10 +210,12 @@ body {
                     margin-bottom: 0;
                     width: 60%;
                     display: flex;
+
                     @media #{$mq9b} {
                         bottom: 3px;
                         font-size: 12px;
                     }
+
                     span {
                         font-weight: 500;
                         padding-left: 10px;
